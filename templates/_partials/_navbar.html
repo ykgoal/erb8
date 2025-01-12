@@ -1,0 +1,58 @@
+<!-- Scrollspy -->
+
+<div class="container mt-3 mb-3">
+    <div class="row">    
+
+        <nav class="navbar navbar-light bg-light">
+
+            <a class="navbar-brand text-primary" href={% url "index" %}><small>Home</small></a>            
+            
+            <!-- System (clear/update)-->
+            <ul class="nav nav-pills">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false">System
+                    </a>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href={% url "clear" %}>Clear all data</a>
+                    <a class="dropdown-item" href={% url "update" %}>Import from list</a>
+                    </div>
+                </li>
+            </ul>       
+
+            <!-- Continent -->
+            {% if continents %}
+            <ul class="nav nav-pills">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" 
+                        aria-haspopup="true" aria-expanded="false">Continent
+                    </a>
+                    <div class="dropdown-menu">
+                    {% for continent in continents %}               
+                        <a class="dropdown-item" href={% url "continents" continent.id %}>{{ continent }}</a>  
+                    {% endfor %}                 
+                    </div>
+                </li>
+            </ul>
+            {% endif %}  
+
+            <!-- state -->
+            {% if states %}
+            <ul class="nav nav-pills">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" 
+                        role="button" aria-haspopup="true" aria-expanded="false">State
+                    </a>
+                    <div class="dropdown-menu">
+                    {% for state in states %}               
+                        <a class="dropdown-item" href={% url "states" state.id %}>{{ state }}</a>  
+                    {% endfor %}    
+                    </div>
+                </li>
+            </ul>   
+            {% endif %}
+
+        </nav>
+
+    </div>
+</div>

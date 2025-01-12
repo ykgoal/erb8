@@ -20,8 +20,10 @@ class State(models.Model):
         return self.name
 
 class Flower(models.Model):
+    continent = models.ForeignKey(Continent, on_delete=models.CASCADE, default=None)
     state = models.ForeignKey(State, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
+    image_link = models.CharField(max_length=200, blank=True)    
     publish_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):

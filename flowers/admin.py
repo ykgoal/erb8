@@ -29,7 +29,7 @@ admin.site.register(State, StateAdmin)
 
 
 class FlowerAdmin(admin.ModelAdmin):
-    list_display = ('id', 'state', 'name', 'publish_date')
+    list_display = ('id', 'state', 'name', 'image_link', 'publish_date')
     list_display_links = ('id', 'name')
     list_filter = ('name',)
     search_fields = ('name',)

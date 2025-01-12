@@ -1,0 +1,31 @@
+<div class="container">
+<div class="row"> 
+
+<table class="table table-default text-primary table-striped table-hover table-responsive table-sm">
+
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col"></th>        
+        <th scope="col">Continent</th>
+        <th scope="col">State</th>
+        <th scope="col">Flower</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for flower in flowers %}    
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>        
+            <td><img src={{ flower.image_link }} alt="..." style="width:25px heigth:25px;" /></td>
+            <td> {{ flower.state.continent }}</td>            
+            <td> {{ flower.state }}</td>
+            <td> {{ flower.name }}</td>                    
+        </tr> 
+        {% endfor %}
+    </tbody>
+
+</table>
+
+</div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row"> 
+
+        {% for flower in flowers %}    
+
+            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header "><small><i class="fas fa-bed text-secondary"></i>{{ flower.state.continent }}</small></div>
+                <div class="card-body">
+                    <h6 class="card-title"><small>{{ flower.state }}</small></h6>
+                    <p class="card-text"><small>{{ flower.name }}</small></p>
+                    <img src={{ flower.image_link }} alt="..." style="width:50px heigth:50px;" />
+                </div>
+            </div>  
+            
+        {% endfor %}
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row"> 
+        <div class="alert alert-success">
+                Total = {{ flowers_count }}            
+        </div>
+    </div>
+</div>
+
+
