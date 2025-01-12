@@ -55,14 +55,14 @@ def index(request):
     return render(request, 'flowers/index.html', db_filter())
 
 
-def waters(request):
+def waters(request):                        #clear all data
 
     db_init()
 
     return render(request, 'flowers/index.html', db_filter())
 
 
-def plants(request):    
+def plants(request):                        #update data
 
     db_update(flowers_list)
 
@@ -72,7 +72,6 @@ def plants(request):
 def continents(request, continent_id):
 
     context = db_filter()
-    #context['flowers'] = context['flowers'].filter(continent_id=continent_id)
     context['flowers'] = context['flowers'].filter(state__continent__id=continent_id)
     
     return render(request, 'flowers/continents.html', context)
