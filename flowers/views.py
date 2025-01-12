@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Continent, State , Flower
 from .flowers import flowers as flowers_list
 
