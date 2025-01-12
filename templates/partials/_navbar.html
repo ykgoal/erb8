@@ -7,15 +7,14 @@
 
             <a class="navbar-brand text-primary" href={% url "index" %}><small>Home</small></a>            
             
-            <!-- System (clear/update)-->
+            <!-- System (waters/plants=clear/update)-->
             <ul class="nav nav-pills">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                        aria-haspopup="true" aria-expanded="false">System
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">System
                     </a>
                     <div class="dropdown-menu">
-                    <a class="dropdown-item" href={% url "clear" %}>Clear all data</a>
-                    <a class="dropdown-item" href={% url "update" %}>Import from list</a>
+                    <a class="dropdown-item" href={% url "waters" %}>Clear all data</a>
+                    <a class="dropdown-item" href={% url "plants" %}>Import from list</a>
                     </div>
                 </li>
             </ul>       
@@ -24,8 +23,7 @@
             {% if continents %}
             <ul class="nav nav-pills">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" 
-                        aria-haspopup="true" aria-expanded="false">Continent
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Continent
                     </a>
                     <div class="dropdown-menu">
                     {% for continent in continents %}               
@@ -40,8 +38,7 @@
             {% if states %}
             <ul class="nav nav-pills">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" 
-                        role="button" aria-haspopup="true" aria-expanded="false">State
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">State
                     </a>
                     <div class="dropdown-menu">
                     {% for state in states %}               
