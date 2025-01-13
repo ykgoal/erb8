@@ -24,6 +24,6 @@ flowers = (
         ('North America','Canada','Nova Scotia','https://picsum.photos/25/25'),
         ('Oceania','Australia','Golden Wattle','https://picsum.photos/25/25'), 
         ('Europe','Belgium','Wallonia','https://picsum.photos/25/25'),    
-        ('Africa','Nigeria','Costus spectabilis','https://picsum.photos/25/25'),
+        ('Africa','Nigeria','Costus spectabilis','https://picsum.photos/25/25'),       
         ('Oceania','New Zealand','floral emblem','https://picsum.photos/25/25')    
     )

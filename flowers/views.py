@@ -30,7 +30,7 @@ def db_update(f):                                                       # f = fl
             flower = Flower(state_id=state.id, name=f[i][2], image_link=f[i][3])
             flower.save()
         else:
-            flower = Flower.objects.filter(state_id=state.id, name=f[i][2])[0]
+            flower = Flower.objects.get(state_id=state.id, name=f[i][2])
             flower.image_link = f[i][3]
             flower.save()
 
