@@ -14,25 +14,23 @@ def db_update(f):                                                       # f = fl
     for i in range(len(f)):                                             
         #print(f[i][0], f[i][1], f[i][2], f[i][3])                      # continent, state, flower, image_link
         
-        if not Continent.objects.filter(name=f[i][0]).exists():
-            continent = Continent(name=f[i][0])
-            continent.save()
-        else:
+        if Continent.objects.filter(name=f[i][0]).exists():
             continent = Continent.objects.get(name=f[i][0])
-        
-        if not State.objects.filter(name=f[i][1]).exists():
-            state = State(continent_id=continent.id, name=f[i][1])
-            state.save()
         else:
-            state = State.objects.get(name=f[i][1])    
+            continent = Continent.objects.create(name=f[i][0])
+
+        if State.objects.filter(name=f[i][1]).exists():
+            state = State.objects.get(name=f[i][1]) 
+        else:
+            state = State.objects.create(continent_id=continent.id, name=f[i][1])
             
-        if not Flower.objects.filter(state_id=state.id, name=f[i][2]).exists():
-            flower = Flower(state_id=state.id, name=f[i][2], image_link=f[i][3])
-            flower.save()
-        else:
+        if Flower.objects.filter(state_id=state.id, name=f[i][2]).exists():
             flower = Flower.objects.get(state_id=state.id, name=f[i][2])
             flower.image_link = f[i][3]
             flower.save()
+        else:
+            flower = Flower.objects.create(state_id=state.id, name=f[i][2], image_link=f[i][3])
+
 
 
 def db_filter():
